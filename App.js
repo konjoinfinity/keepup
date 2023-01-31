@@ -1,15 +1,17 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
 
-import React, { Component } from 'react';
-import { AppRegistry } from 'react-native';
+import useCachedResources from './useCachedResources';
+import React from 'react';
 import Soccer from './Soccer';
 
+
 export default function App() {
-  return (
-    <Soccer />
-  );
+  const isLoadingComplete = useCachedResources();
+
+  if (!isLoadingComplete) {
+    return null
+  } else {
+    return (
+      <Soccer />
+    );
+  }
 }
