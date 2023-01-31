@@ -1,0 +1,42 @@
+{
+  "expo": {
+    "name": "keepup",
+    "slug": "keepup",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./images/soccer.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./images/soccer.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.konjo.keepup",
+      "buildNumber": "1",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "foregroundImage": "./images/soccer.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.konjo.keepup"
+    },
+    "extra": {
+      "eas": {
+  
+      }
+    }
+  }
+}
