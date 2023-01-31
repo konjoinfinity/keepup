@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "keepup",
-    "slug": "keepup",
+    "name": "Juggle Sports",
+    "slug": "Juggle-Sports",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./images/soccer.png",
@@ -19,23 +19,23 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.konjo.keepup",
-      "buildNumber": "1",
+      "bundleIdentifier": "com.konjo.jugglesports",
+      "buildNumber": "2",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false
       }
     },
     "android": {
-      "versionCode": 1,
+      "versionCode": 2,
       "adaptiveIcon": {
         "foregroundImage": "./images/soccer.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.konjo.keepup"
+      "package": "com.konjo.jugglesports"
     },
     "extra": {
       "eas": {
-        "projectId": "60e3e3e5-cf18-440d-9c04-b8d7d0edfd95"
+     
       }
     }
   }
