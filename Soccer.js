@@ -1,15 +1,9 @@
 import React, {Component} from 'react';
-import {View,
-        Text,
-        StyleSheet,
-        Dimensions,
-        Image,
-        TouchableOpacity,
-        TouchableWithoutFeedback,
-        AccessibilityInfo} from 'react-native';
-        import * as Haptics from 'expo-haptics';
+import {View,Text, StyleSheet,Dimensions,Image,Modal,TouchableOpacity,TouchableWithoutFeedback} from 'react-native';
+import * as Haptics from 'expo-haptics';
 import Score from './components/Score';
 import Emoji from './components/Emoji';
+import * as All  from './images';
 
 const LC_IDLE = 0;
 const LC_RUNNING = 1;
@@ -27,8 +21,17 @@ const FLOOR_X = SCREEN_WIDTH / 2;
 const SCORE_Y = SCREEN_HEIGHT / 6;
 const EMOJI_Y = SCREEN_HEIGHT / 3;
 
-class Soccer extends Component {
+const sports = ['soccer', 'baseball', 'basketball', 'football', 'golf', 'tennis', 'hockey']
 
+function Sports({sport, set}) {
+    return (
+        <TouchableOpacity onPress={()=> set(sport)}>
+        <Image style={{width: Dimensions.get('window').width * 0.3, height: Dimensions.get('window').width * 0.3, marginBottom: 15}} source={All[`${sport}`]}/>
+        </TouchableOpacity>
+    )
+}
+
+class Soccer extends Component {
     constructor(props) {
         super(props);
         this.interval = null;
@@ -42,6 +45,8 @@ class Soccer extends Component {
             scored: false,
             lost: false,
             rotate: 0,
+            sport: All.soccer,
+            visible: true
         };
     }
 
@@ -86,12 +91,14 @@ class Soccer extends Component {
         nextState.rotate += ROTATION_FACTOR * nextState.vx;
         // Hit the left wall
         if(nextState.x < BALL_WIDTH / 2) {
+            Haptics.selectionAsync()
             nextState.vx = -nextState.vx;
             nextState.x = BALL_WIDTH / 2;
         }
 
         // Hit the right wall
         if(nextState.x > SCREEN_WIDTH - BALL_WIDTH / 2) {
+            Haptics.selectionAsync()
             nextState.vx = -nextState.vx;
             nextState.x = SCREEN_WIDTH - BALL_WIDTH / 2;
         }
@@ -122,6 +129,11 @@ class Soccer extends Component {
         this.setState(nextState);
     }
 
+    setSport(sport){
+        Haptics.selectionAsync()
+        this.setState({visible: false, sport: All[`${sport}`]})
+    }
+
     render() {
         var position = {
             left: this.state.x - (BALL_WIDTH / 2),
@@ -140,8 +152,19 @@ class Soccer extends Component {
                 onPress={(event) => this.onTap(event.nativeEvent)}
                         onPressIn={(event) => this.onTap(event.nativeEvent)}
                         onPressOut={(event) => this.onTap(event.nativeEvent)}>
-                            <Image source={require('./images/bball.png')} style={[styles.ball, position, rotation]}/>
+                            <Image source={this.state.sport} style={[styles.ball, position, rotation]}/>
                         </TouchableWithoutFeedback>
+                        <Modal animationType='slide' presentationStyle='formSheet' visible={this.state.visible}>
+                        <View style={{ alignItems: "center", marginTop: Dimensions.get('window').height * 0.2}}>
+                            <Text style={{fontSize: "40", fontWeight: "200", marginBottom: 20}}>
+                                Choose your sport
+                            </Text>
+                            <View style={{flexDirection: "row", flexWrap: "wrap", justifyContent:"space-evenly"}}>
+                            {sports.map(sport => {return <Sports key={sport} set={() => this.setSport(sport)} sport={sport} /> })}
+                            </View>
+                        </View>
+                        </Modal>
+                        
             </View>
         );
     }
