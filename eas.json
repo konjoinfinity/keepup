@@ -9,13 +9,18 @@
         "gradleCommand": ":app:assembleDebug"
       },
       "ios": {
+        "resourceClass": "m1-medium",
         "buildConfiguration": "Debug"
       }
     },
     "preview": {
       "distribution": "internal"
     },
-    "production": {}
+    "production": {
+      "ios": {
+        "resourceClass": "m1-medium"
+      }
+    }
   },
   "submit": {
     "production": {}
