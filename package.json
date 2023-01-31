@@ -1,0 +1,18 @@
+{
+  "name": "Soccer",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web"
+  },
+  "dependencies": {
+    "expo": "^47.0.13",
+    "expo-haptics": "^12.0.1",
+    "metro-core": "^0.74.1",
+    "react": "18.1.0",
+    "react-native": "0.70.5"
+  }
+}
