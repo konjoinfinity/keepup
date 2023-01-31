@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Juggle Sports",
-    "slug": "Juggle-Sports",
+    "name": "Tap It Up Sports",
+    "slug": "Tap-It-Up-Sports",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./images/soccer.png",
@@ -19,23 +19,23 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.konjo.jugglesports",
-      "buildNumber": "2",
+      "bundleIdentifier": "com.konjo.tapitupsports",
+      "buildNumber": "4",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false
       }
     },
     "android": {
-      "versionCode": 2,
+      "versionCode": 4,
       "adaptiveIcon": {
         "foregroundImage": "./images/soccer.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.konjo.jugglesports"
+      "package": "com.konjo.tapitupsports"
     },
     "extra": {
       "eas": {
-        "projectId": "72f79ac4-c08d-4bad-8e15-866b9d3a5cd6"
+ 
       }
     }
   }

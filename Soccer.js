@@ -164,7 +164,6 @@ class Soccer extends Component {
                             </View>
                         </View>
                         </Modal>
-                        
             </View>
         );
     }
