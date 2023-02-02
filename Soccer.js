@@ -143,7 +143,6 @@ class Soccer extends Component {
                 {rotate: this.state.rotate + 'deg'},
             ],
         }
-        console.log(this.state.button)
         return (
             <View>
                 <Score score={this.state.score} y={SCORE_Y} scored={this.state.scored}/>
