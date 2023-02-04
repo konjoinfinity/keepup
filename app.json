@@ -20,13 +20,13 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.konjo.tapitupsports",
-      "buildNumber": "5",
+      "buildNumber": "6",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false
       }
     },
     "android": {
-      "versionCode": 5,
+      "versionCode": 6,
       "adaptiveIcon": {
         "foregroundImage": "./images/soccer.png",
         "backgroundColor": "#ffffff"
