@@ -70,7 +70,6 @@ class Soccer extends Component {
         }
         else {
             let centerX = BALL_WIDTH / 2;
-            let centerY = BALL_HEIGHT / 2;
             let velocityX = ((centerX - event.locationX) / SCREEN_WIDTH) * TAPPED_VELOCITY;
             let velocityY = -TAPPED_VELOCITY;
             this.setState({
@@ -134,11 +133,11 @@ class Soccer extends Component {
     }
 
     render() {
-        var position = {
+        let position = {
             left: this.state.x - (BALL_WIDTH / 2),
             top: this.state.y - (BALL_HEIGHT / 2),
         }
-        var rotation = {
+        let rotation = {
             transform: [
                 {rotate: this.state.rotate + 'deg'},
             ],
@@ -163,7 +162,7 @@ class Soccer extends Component {
                             </View>
                         </View>
                         </Modal>
-                        {this.state.button == true && <TouchableOpacity onPressIn={()=> {this.setState({visible: true}), Haptics.selectionAsync()}} 
+                        {this.state.button === true && <TouchableOpacity onPressIn={()=> {this.setState({visible: true}); Haptics.selectionAsync();}} 
                         style={{padding: 10, height: 55, width: 55, position: 'absolute', bottom: 30, right: 30, borderColor: '#e7e7e6', borderWidth: 0.5, shadowColor: "#555a74", 
               shadowOffset: { height: 0.5, width: 0.5 }, 
               shadowOpacity: 0.5, 
