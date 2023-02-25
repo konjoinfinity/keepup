@@ -1,11 +1,13 @@
-# react-native-soccer
-React Native clone of the Facebook Messenger soccer game
+# Keep It Up Sports ⚽️🏀🏈⚾️
+
+## Download the iOS testflight beta: https://testflight.apple.com/join/t3kSnqy9
+
+## Demo
 
 ![Demo GIF](/images/soccerGame.gif)
 
-## Installation
-* `git clone https://github.com/nitishp/react-native-soccer`
-* `cd react-native-soccer`
-* `react-native run-android`
+### This was originally cloned from https://github.com/nitishp/react-native-soccer
 
-This is my first real React Native project. Feel free to give me any feedback!
+My updated version has been accepted as a pull request here:
+
+https://github.com/nitishp/react-native-soccer/pull/2
